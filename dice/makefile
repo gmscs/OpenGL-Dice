@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -lGLEW -lGL -lX11 -lGLU -lOpenGL -lglfw -lrt -lm -ldl -lassimp
+CFLAGS = -lGLEW -lGL -lX11 -lGLU -lOpenGL -lglfw -lrt -lm -ldl -lassimp -std=c++20
 
 TARGET = dice
 
