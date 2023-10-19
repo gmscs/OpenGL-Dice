@@ -586,8 +586,9 @@ int main() {
 		glUseProgram(skybox_shader);
 		glBindTexture(GL_TEXTURE_CUBE_MAP, skybox_texture);
     	skybox_matrix = projection_matrix * skybox_view_matrix;
-		glUniformMatrix4fv(glGetUniformLocation(skybox_shader, "skybox_matrix"), 1, GL_FALSE, ggl::pointer(skybox_matrix));
-		glUniformMatrix4fv(glGetUniformLocation(skybox_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(skybox_model_matrix));
+
+		glUniformMatrix4fv(glGetUniformLocation(skybox_shader, "skybox_matrix"), 1, GL_TRUE, ggl::pointer(skybox_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(skybox_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(skybox_model_matrix));
 		glBindVertexArray(skybox_vao);
 		glDrawArrays(GL_TRIANGLES, 0, cube_v_total);
 		glDepthMask(GL_TRUE);
@@ -595,108 +596,108 @@ int main() {
 		glUseProgram(sphere_shader);
 		glBindTexture(GL_TEXTURE_CUBE_MAP, 0);
 		sphere_matrix = projection_matrix * sphere_view_matrix;
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "sphere_matrix"), 1, GL_FALSE, ggl::pointer(sphere_matrix));
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere1_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "sphere_matrix"), 1, GL_TRUE, ggl::pointer(sphere_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere1_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere21_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere21_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere22_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere22_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere31_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere31_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere32_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere32_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere33_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere33_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere41_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere41_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere42_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere42_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere43_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere43_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere44_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere44_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere51_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere51_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere52_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere52_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere53_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere53_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere54_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere54_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere55_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere55_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere61_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere61_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere62_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere62_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere63_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere63_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere64_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere64_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere65_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere65_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere66_model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere66_model_matrix));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
@@ -704,9 +705,9 @@ int main() {
 		glUseProgram(die_shader);
 		glBindTexture(GL_TEXTURE_CUBE_MAP, skybox_texture);
 		die_matrix = projection_matrix * die_view_matrix;
-		glUniformMatrix4fv(glGetUniformLocation(die_shader, "camera_position"), 1, GL_FALSE, ggl::pointer(die_camera_position));
-		glUniformMatrix4fv(glGetUniformLocation(die_shader, "die_matrix"), 1, GL_FALSE, ggl::pointer(die_matrix));
-		glUniformMatrix4fv(glGetUniformLocation(die_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(model_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(die_shader, "camera_position"), 1, GL_TRUE, ggl::pointer(die_camera_position));
+		glUniformMatrix4fv(glGetUniformLocation(die_shader, "die_matrix"), 1, GL_TRUE, ggl::pointer(die_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(die_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(model_matrix));
 		glBindVertexArray(die_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, die_i_vbo);
 		glDrawElements(GL_TRIANGLES, die_indices.size(), GL_UNSIGNED_INT, NULL);
@@ -714,108 +715,108 @@ int main() {
 		glUseProgram(sphere_shader);
 		glBindTexture(GL_TEXTURE_CUBE_MAP, 0);
 		sphere_matrix = projection_matrix * sphere_view_matrix;
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "sphere_matrix"), 1, GL_FALSE, ggl::pointer(sphere_matrix));
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere1_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "sphere_matrix"), 1, GL_TRUE, ggl::pointer(sphere_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere1_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere21_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere21_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere22_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere22_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere31_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere31_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere32_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere32_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere33_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere33_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere41_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere41_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere42_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere42_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere43_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere43_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere44_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere44_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere51_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere51_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere52_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere52_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere53_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere53_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere54_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere54_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere55_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere55_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere61_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere61_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere62_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere62_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere63_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere63_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere64_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere64_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere65_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere65_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
 		
-		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(sphere66_model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(sphere_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(sphere66_model_matrix2));
 		glBindVertexArray(sphere_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_i_vbo);
 		glDrawElements(GL_TRIANGLES, sphere_indices.size(), GL_UNSIGNED_INT, NULL);
@@ -823,9 +824,9 @@ int main() {
 		glUseProgram(die_shader);
 		glBindTexture(GL_TEXTURE_CUBE_MAP, skybox_texture);
 		die_matrix = projection_matrix * die_view_matrix;
-		glUniformMatrix4fv(glGetUniformLocation(die_shader, "camera_position"), 1, GL_FALSE, ggl::pointer(die_camera_position));
-		glUniformMatrix4fv(glGetUniformLocation(die_shader, "die_matrix"), 1, GL_FALSE, ggl::pointer(die_matrix));
-		glUniformMatrix4fv(glGetUniformLocation(die_shader, "model_matrix"), 1, GL_FALSE, ggl::pointer(model_matrix2));
+		glUniformMatrix4fv(glGetUniformLocation(die_shader, "camera_position"), 1, GL_TRUE, ggl::pointer(die_camera_position));
+		glUniformMatrix4fv(glGetUniformLocation(die_shader, "die_matrix"), 1, GL_TRUE, ggl::pointer(die_matrix));
+		glUniformMatrix4fv(glGetUniformLocation(die_shader, "model_matrix"), 1, GL_TRUE, ggl::pointer(model_matrix2));
 		glBindVertexArray(die_vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, die_i_vbo);
 		glDrawElements(GL_TRIANGLES, die_indices.size(), GL_UNSIGNED_INT, NULL);
