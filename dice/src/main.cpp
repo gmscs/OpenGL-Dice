@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <vector>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -8,14 +9,14 @@
 #include <assimp/postprocess.h>
 #include <assimp/scene.h>
 
-#include "ggl/ggl.hpp"
+#include "../include/ggl/ggl.hpp"
 
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 
-#include "stb/stb_image.h"
-#include "stb/stb_image_resize.h"
-#include "stb/stb_image_write.h"
+#include "../include/stb/stb_image.h"
+#include "../include/stb/stb_image_resize.h"
+#include "../include/stb/stb_image_write.h"
 
 const char* die_fragment_shader =
 "#version 330 core\n"
@@ -356,7 +357,7 @@ int main() {
 	std::cout << "Loaded Sphere Mesh\n";
 	
 	// SKYBOX TEXTURE LOADING
-	GLuint skybox_texture = load_cube_tex("skybox/", 0);
+	GLuint skybox_texture = load_cube_tex("assets/skybox/", 0);
 	if(skybox_texture == -1) {
 		std::cerr << "Failed to load textures. Exiting.\n";
 		return 1;
@@ -912,7 +913,7 @@ int main() {
 		//CHANGE SKYBOX
 		if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS && key1_pressed == false) {
 			key1_pressed = true;
-			skybox_texture = load_cube_tex("skybox/", 0);
+			skybox_texture = load_cube_tex("assets/skybox/", 0);
 			if(skybox_texture == -1) {
 				std::cerr << "Failed to load textures. Exiting.\n";
 				return 1;
@@ -925,7 +926,7 @@ int main() {
 
 		if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS && key2_pressed == false) {
 			key2_pressed = true;
-			skybox_texture = load_cube_tex("skybox2/", 0);
+			skybox_texture = load_cube_tex("assets/skybox2/", 0);
 			if(skybox_texture == -1) {
 				std::cerr << "Failed to load textures. Exiting.\n";
 				return 1;
@@ -938,7 +939,7 @@ int main() {
 
 		if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS && key3_pressed == false) {
 			key3_pressed = true;
-			skybox_texture = load_cube_tex("skybox3/", 0);
+			skybox_texture = load_cube_tex("assets/skybox3/", 0);
 			if(skybox_texture == -1) {
 				std::cerr << "Failed to load textures. Exiting.\n";
 				return 1;

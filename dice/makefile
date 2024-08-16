@@ -1,12 +1,15 @@
 CC = g++
 CFLAGS = -lGLEW -lGL -lX11 -lGLU -lOpenGL -lglfw -lrt -lm -ldl -lassimp -std=c++20
 
-TARGET = dice
+TARGET = build/dice
 
-all: $(TARGET)
+all: build $(TARGET)
 
-$(TARGET): main.cpp
-	$(CC) -o $(TARGET) main.cpp $(CFLAGS)
+build:
+	@mkdir -p build
+
+$(TARGET): src/main.cpp
+	$(CC) -o $(TARGET) src/main.cpp $(CFLAGS)
 
 clean:
 	$(RM) $(TARGET)
